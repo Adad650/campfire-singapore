@@ -385,7 +385,7 @@ function App() {
       {/* Map Section */}
       <section className="relative h-[900px] px-8">
         {/* Clouds overlay behind map */}
-        <div className="absolute top-0 left-0 w-full -translate-y-96">
+        <div className="absolute top-0 left-0 w-full h-full -translate-y-96 from-transparent to-[#022994] bg-gradient-to-b">
           <img src="/decorative/clouds-3.png" alt="" className="w-full h-full object-cover" />
         </div>
 
@@ -398,30 +398,44 @@ function App() {
       </section>
 
       {/* Stories Section */}
-      <section className="relative py-24 bg-[#384fbc] -translate-y-170 -z-10 pt-130 pb-330" style={{
+      <section className="relative py-24 bg-[#384fbc] -translate-y-100 bg-cover bg-center -z-10 pt-130 pb-60" style={{
         background: `
           url(/backgrounds/blue-gradient.png)
-        `,
-        backgroundSize: 'contain'
+        `
       }}>
-        {/* Moon overlay */}
-        <div className="absolute top-[600px] left-[-200px] w-[778px] h-[719px]">
-          <img 
-            src="/decorative/moon.png" 
-            alt="" 
-            className="w-full h-full object-cover transform rotate-[346deg]"
+        <div className="absolute bottom-0 left-0">
+          <img
+            src="/decorative/clouds-1.png"
+            alt=""
+            className="w-full h-full object-contain"
           />
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full h-full">
+        <div className="absolute bottom-0 left-0 w-[80vw]">
+          <img 
+            src="/decorative/moon-composite.png" 
+            alt="" 
+            className="w-full h-full object-contain transform rotate-[346deg]"
+          />
+        </div>
+
+        <div className="absolute bottom-[-1300px] scale-105 left-0 w-full">
+          <img
+            src="/decorative/puzzle-composite.png"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* <div className="absolute bottom-0 left-0 w-full h-full">
           <img
             alt=""
             src="decorative/clouds-1.png"
             className="w-full h-full object-cover transform"
           />
-        </div>
+        </div> */}
 
-        <div className="relative z-10 flex flex-col gap-12 items-center px-32 max-w-7xl mx-auto">
+        <div className="relative z-10 flex flex-col gap-12 items-center px-32 max-w-7xl mx-auto -translate-y-56">
           <h2 
             className="text-[#d7cfeb] text-6xl font-bold text-center mb-8"
             style={{ 
@@ -527,28 +541,7 @@ function App() {
         </div>
       </section>
 
-      <div className="relative h-[200px] bg-[#384fbc]">
-        <div className="absolute inset-0 w-full h-full opacity-30">
-          <img src="/decorative/puzzle-outline.png" alt="" className="w-full h-full object-cover" />
-        </div>
-        
-        <div className="absolute top-[50px] left-[100px] transform rotate-[15deg]">
-          <img 
-            src="/decorative/puzzle-scattered.png" 
-            alt="" 
-            className="w-[150px] h-[120px] object-cover shadow-[0_12px_0px_0px_rgba(0,0,0,0.25)]"
-          />
-        </div>
-        <div className="absolute top-[80px] right-[150px] transform rotate-[-20deg]">
-          <img 
-            src="/decorative/puzzle-scattered.png" 
-            alt="" 
-            className="w-[120px] h-[100px] object-cover shadow-[0_12px_0px_0px_rgba(0,0,0,0.25)]"
-          />
-        </div>
-      </div>
-
-      <section className="relative bg-[#384fbc] py-24">
+      <section className="relative bg-[#384fbc] py-24 pt-64 -translate-y-96 -z-20">
         <div className="flex flex-col gap-8 items-center px-32 max-w-7xl mx-auto">
           <h2 
             className="text-[#f1ebff] text-6xl font-bold text-center mb-8"
