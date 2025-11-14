@@ -541,8 +541,8 @@ function App() {
         </div>
       </section>
 
-      <section className="relative bg-[#384fbc] py-24 pt-64 -translate-y-96 -z-20">
-        <div className="flex flex-col gap-8 items-center px-32 max-w-7xl mx-auto">
+      <section className="relative bg-[#384fbc] pb-48 pt-64 -translate-y-96 -z-20">
+        <div className="flex flex-col gap-8 items-center px-8 max-w-7xl mx-auto">
           <h2 
             className="text-[#f1ebff] text-6xl font-bold text-center mb-8"
             style={{ 
@@ -661,35 +661,22 @@ function App() {
             </div>
           </div>
         </div>
+
+        <div className="absolute bottom-[-330px] scale-105 left-0 w-full">
+          <img
+            src="/decorative/puzzle-cloud-bottom.png"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
       </section>
 
-      <div className="relative h-[200px] bg-[#384fbc]">
-        <div className="absolute inset-0 w-full h-full opacity-30 transform rotate-180">
-          <img src="/decorative/puzzle-outline.png" alt="" className="w-full h-full object-cover" />
-        </div>
-        
-        <div className="absolute top-[30px] left-[200px] transform rotate-[25deg]">
+      <section className="relative bg-[#384fbc] pb-32 pt-64 -translate-y-96 -z-30">
+        <div className="absolute w-full h-full -z-10">
           <img 
-            src="/decorative/puzzle-scattered.png" 
+            src="/decorative/speech-bubble-bg.png" 
             alt="" 
-            className="w-[180px] h-[140px] object-cover shadow-[0_12px_0px_0px_rgba(0,0,0,0.25)]"
-          />
-        </div>
-        <div className="absolute top-[60px] right-[100px] transform rotate-[-15deg]">
-          <img 
-            src="/decorative/puzzle-scattered.png" 
-            alt="" 
-            className="w-[140px] h-[110px] object-cover shadow-[0_12px_0px_0px_rgba(0,0,0,0.25)]"
-          />
-        </div>
-      </div>
-
-      <section className="relative bg-[#384fbc] py-24">
-        <div className="absolute top-[100px] left-1/2 transform -translate-x-1/2 w-[1732px] h-[2162px] rotate-[-3.3deg] -z-10">
-          <img 
-            src="/ui/faq-speech-bubble.svg" 
-            alt="" 
-            className="w-full h-full object-cover"
+            className="w-full h-full"
           />
         </div>
 
