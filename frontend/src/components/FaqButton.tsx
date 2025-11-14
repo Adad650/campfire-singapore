@@ -1,5 +1,3 @@
-import { fonts } from './fonts.js';
-
 interface FaqButtonProps {
   className?: string;
   content?: string;
@@ -17,8 +15,7 @@ function FaqButton({ className = "", content = "Check out the parent guide" }: F
           />
         </div>
         <p 
-          className="text-white text-5xl font-bold leading-none whitespace-nowrap"
-          style={{ fontFamily: fonts.amaticBold, fontWeight: 'bold' }}
+          className="text-white text-5xl font-bold leading-none whitespace-nowrap font-amatic"
         >
           {content}
         </p>

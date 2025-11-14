@@ -1,4 +1,3 @@
-import { fonts } from './components/fonts.js';
 import FaqQuestion from './components/FaqQuestion.js';
 import FaqButton from './components/FaqButton.js';
 import Step from './components/Step.js';
@@ -18,7 +17,7 @@ function App() {
 
       <div className="w-full h-screen">
         <header className="relative h-[115px] bg-[#45b4f5] flex justify-end items-center pr-16">
-          <nav className="flex gap-12 items-center text-white text-5xl font-bold" style={{ fontFamily: fonts.amaticBold, fontWeight: 'bold' }}>
+          <nav className="flex gap-12 items-center text-white text-5xl font-bold font-amatic">
             <button className="hover:opacity-80 transition-opacity">Steps</button>
             <button className="hover:opacity-80 transition-opacity">Map</button>
             <button className="hover:opacity-80 transition-opacity">Previous events</button>
@@ -64,9 +63,8 @@ function App() {
                 
                 <div className="transform rotate-[-2.97deg]">
                   <h1 
-                    className="text-[#fcf5ed] text-[80px] md:text-[120px] lg:text-[150px] font-normal leading-none mb-4"
+                    className="text-[#fcf5ed] text-[80px] md:text-[120px] lg:text-[150px] font-normal leading-none mb-4 font-dream-planner"
                     style={{ 
-                      fontFamily: fonts.dreamPlanner,
                       textShadow: "5px 8px 0px rgba(0,0,0,0.25)"
                     }}
                   >
@@ -76,20 +74,16 @@ function App() {
 
                 <div className="pl-4">
                   <p 
-                    className="text-white text-4xl font-bold mb-2"
+                    className="text-white text-4xl font-bold mb-2 font-amatic"
                     style={{ 
-                      fontFamily: fonts.amaticBold,
-                      fontWeight: 'bold',
                       textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
                     }}
                   >
                     Game jam for high schoolers in 200+ cities
                   </p>
                   <p 
-                    className="text-white text-4xl font-bold"
+                    className="text-white text-4xl font-bold font-amatic"
                     style={{ 
-                      fontFamily: fonts.amaticBold,
-                      fontWeight: 'bold',
                       textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
                     }}
                   >
@@ -105,8 +99,7 @@ function App() {
                   <img src="/icons/email.svg" alt="" className="w-6 h-5 flex-shrink-0" />
                   <input 
                     type="email"
-                    className="text-[#854d16] text-2xl md:text-4xl font-bold truncate bg-transparent border-none outline-none flex-1 cursor-text"
-                    style={{ fontFamily: fonts.amaticBold, fontWeight: 'bold' }}
+                    className="text-[#854d16] text-2xl md:text-4xl font-bold truncate bg-transparent border-none outline-none flex-1 cursor-text font-amatic"
                     placeholder="you@hackclub.com"
                     defaultValue="you@hackclub.com"
                   />
@@ -119,8 +112,7 @@ function App() {
                   }}
                 >
                   <p 
-                    className="text-[#8d3f34] text-3xl md:text-5xl font-normal"
-                    style={{ fontFamily: fonts.dreamPlanner }}
+                    className="text-[#8d3f34] text-3xl md:text-5xl font-normal font-dream-planner"
                   >
                     RSVP!
                   </p>
@@ -131,10 +123,8 @@ function App() {
             <div className="relative w-full lg:w-auto">
               <div className="flex items-center justify-center gap-3 mb-4 2xl:mb-8">
                 <p 
-                  className="text-white text-2xl 2xl:text-6xl md:text-4xl font-bold"
+                  className="text-white text-2xl 2xl:text-6xl md:text-4xl font-bold font-amatic"
                   style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
                     textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
                   }}
                 >
@@ -260,10 +250,8 @@ function App() {
 
         <div className="relative z-10 flex flex-col gap-12 items-center px-32 max-w-7xl mx-auto -translate-y-56">
           <h2 
-            className="text-[#d7cfeb] text-6xl font-bold text-center mb-8"
+            className="text-[#d7cfeb] text-6xl font-bold text-center mb-8 font-amatic"
             style={{ 
-              fontFamily: fonts.amaticBold,
-              fontWeight: 'bold',
               textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
             }}
           >
@@ -298,10 +286,8 @@ function App() {
       <section className="bg-[#384fbc] pb-[20vw] pt-[20vw] -translate-y-96 -z-20">
         <div className="flex flex-col gap-8 items-center px-8 max-w-7xl mx-auto">
           <h2 
-            className="text-[#f1ebff] text-6xl font-bold text-center mb-8"
+            className="text-[#f1ebff] text-6xl font-bold text-center mb-8 font-amatic"
             style={{ 
-              fontFamily: fonts.amaticBold,
-              fontWeight: 'bold',
               textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
             }}
           >
@@ -355,10 +341,8 @@ function App() {
 
         <div className="relative z-10 px-32">
           <h2 
-            className="text-[#d7cfeb] text-[128px] font-normal text-center mb-16"
+            className="text-[#d7cfeb] text-[128px] font-normal text-center mb-16 font-amatic"
             style={{ 
-              fontFamily: fonts.amaticBold,
-              fontWeight: 'bold',
               textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
             }}
           >
@@ -373,10 +357,8 @@ function App() {
               
               <div className="relative z-10 flex flex-col gap-10 items-center px-16 pt-8 w-[608px]">
                 <p 
-                  className="text-[#d7cfeb] text-6xl font-normal text-center mb-4"
+                  className="text-[#d7cfeb] text-6xl font-normal text-center mb-4 font-amatic"
                   style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
                     textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
                   }}
                 >
@@ -399,10 +381,8 @@ function App() {
               
               <div className="relative z-10 flex flex-col gap-10 items-center px-16 pt-9 w-[608px]">
                 <p 
-                  className="text-[#d7cfeb] text-6xl font-normal text-center mb-4"
+                  className="text-[#d7cfeb] text-6xl font-normal text-center mb-4 font-amatic"
                   style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
                     textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
                   }}
                 >
@@ -430,10 +410,8 @@ function App() {
 
         <div className="absolute bottom-0 left-0 w-full h-[190px] bg-[#0f371d] flex items-center justify-center">
           <p 
-            className="text-white text-6xl text-center font-bold"
+            className="text-white text-6xl text-center font-bold font-amatic"
             style={{ 
-              fontFamily: fonts.amaticBold,
-              fontWeight: 'bold',
               textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
             }}
           >

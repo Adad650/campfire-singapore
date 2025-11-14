@@ -1,5 +1,3 @@
-import { fonts } from './fonts.js';
-
 interface StoryCardProps {
   imageSrc: string;
   imageAlt: string;
@@ -17,20 +15,16 @@ function StoryCard({ imageSrc, imageAlt, title, description }: StoryCardProps) {
       />
       <div className="p-2">
         <p 
-          className="text-black text-5xl font-bold mb-2 text-shadow-[0px_4px_4px_rgba(0,0,0,0.25)]"
+          className="text-black text-5xl font-bold mb-2 font-amatic"
           style={{ 
-            fontFamily: fonts.amaticBold,
-            fontWeight: 'bold',
             textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
           }}
         >
           {title}
         </p>
         <p 
-          className="text-black text-3xl text-shadow-[0px_4px_4px_rgba(0,0,0,0.25)]"
+          className="text-black text-3xl font-bold font-amatic"
           style={{ 
-            fontFamily: fonts.amaticBold,
-            fontWeight: 'bold',
             textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
           }}
         >

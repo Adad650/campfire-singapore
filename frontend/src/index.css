@@ -26,6 +26,9 @@ html, body, #root {
 }
 
 @theme {
+  --font-amatic: 'Amatic SC', sans-serif;
+  --font-dream-planner: 'DREAM PLANNER', Impact, 'Arial Black', sans-serif;
+  
   --animate-fish-swim-1: fish-swim 64s linear infinite;
   --animate-fish-swim-2: fish-swim 70s linear infinite;
   --animate-cloud-float-right: float-left-right 20s ease-in-out alternate infinite;

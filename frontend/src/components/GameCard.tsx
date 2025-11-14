@@ -1,5 +1,3 @@
-import { fonts } from './fonts.js';
-
 interface GameCardProps {
   imageSrc: string;
   imageAlt: string;
@@ -23,20 +21,16 @@ function GameCard({ imageSrc, imageAlt, title, author, href }: GameCardProps) {
       </a>
       <div className="text-center text-[#d7cfeb]">
         <p 
-          className="text-7xl font-bold mb-2 text-shadow-[0px_4px_4px_rgba(0,0,0,0.25)]"
+          className="text-7xl font-bold mb-2 font-amatic"
           style={{ 
-            fontFamily: fonts.amaticBold,
-            fontWeight: 'bold',
             textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
           }}
         >
           {title}
         </p>
         <p 
-          className="text-4xl font-bold text-shadow-[0px_4px_4px_rgba(0,0,0,0.25)]"
+          className="text-4xl font-bold font-amatic"
           style={{ 
-            fontFamily: fonts.amaticBold,
-            fontWeight: 'bold',
             textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
           }}
         >
