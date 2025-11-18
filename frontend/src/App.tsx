@@ -35,7 +35,8 @@ function App() {
         <header className="relative h-[115px] bg-[#45b4f5] flex justify-end items-center pr-16">
           <nav className="flex gap-12 items-center text-white text-5xl font-bold font-amatic">
             <NavbarLink onClick={() => scrollToSection('steps')}>Steps</NavbarLink>
-            <NavbarLink onClick={() => scrollToSection('map')}>Map</NavbarLink>
+            {/* <NavbarLink onClick={() => scrollToSection('map')}>Map</NavbarLink> */}
+            <NavbarLink onClick={() => scrollToSection('letter')}>Letter</NavbarLink>
             <NavbarLink onClick={() => scrollToSection('previous-events')}>Previous events</NavbarLink>
             <NavbarLink onClick={() => scrollToSection('faq')}>FAQ</NavbarLink>
           </nav>
@@ -249,13 +250,37 @@ function App() {
         </div>
       </section>
 
-      <section className="relative h-[900px] px-8 z-30 -mt-96">
+      <section className="relative h-[800px] pb-8 px-8 z-30 -mt-96">
         <div className="absolute top-0 left-0 w-full h-full from-transparent to-[#022994] bg-gradient-to-b pointer-events-none">
           <img src="/decorative/clouds-3.png" alt="" className="w-full h-full object-cover select-none" />
         </div>
 
-        <div id="map" className="relative w-full h-full z-50 translate-y-64 bg-no-repeat bg-center bg-contain bg-[url(/backgrounds/world-map.png)]">
-          
+        <div id="letter" className="relative w-full h-full z-50 translate-y-64 flex justify-center">
+          <img src='/backgrounds/world-map-left.png' alt='' className='h-full' />
+          <div className='relative'>
+            <img src='/backgrounds/world-map-right.png' alt='' className='h-full' />
+            <div className='absolute top-0 left-0 pt-30 pl-12 pr-64 text-2xl flex flex-col gap-6 font-solway'>
+              <h1>Dear Hackers, Musicians, and Artists,</h1>
+              <p>
+                Welcome to Hack Club's newest adventure. This winter we invite you to join us for Campfire, the world's biggest Game Jam happening simultaneously in 100 cities.
+              </p>
+
+              <p><b>Hack Club wants you to make a game this winter.</b></p>
+
+              <p>
+                Don't consider yourself a game dev? No problem - we have tons of online and in-person workshops for you to make your first game!
+              </p>
+
+              <p>
+                This winter, we invite you to learn something new, make something you're really proud of, meet new friends, and go on an incredible adventure together.
+              </p>
+
+              <p>
+                With love, <br />
+                The Campfire Team
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
