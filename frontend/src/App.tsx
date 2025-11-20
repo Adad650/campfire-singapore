@@ -49,12 +49,12 @@ function App() {
 
           <div className="absolute bottom-[32px] right-[140px] w-full h-full pointer-events-none">
             {/* fishy on the right. His name is frederick. */}
-            <div className="absolute top-[64px] right-[140px] w-1/6 animate-fish-swim-2">
+            <div className="absolute top-[64px] right-[140px] w-1/6">
               <img src="/characters/fish-2.png" alt="Fish named Frederick" className="w-full h-full object-cover select-none" />
             </div>
 
             {/* fishy on the left. His name is gubson */}
-            <div className="absolute top-[32px] right-[300px] w-1/6 animate-fish-swim-1">
+            <div className="absolute top-[32px] right-[300px] w-1/6">
               <img src="/characters/fish-1.png" alt="Fish named Gubson" className="w-full h-full object-cover select-none" />
             </div>
           </div>
