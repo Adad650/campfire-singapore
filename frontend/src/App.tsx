@@ -444,7 +444,7 @@ function App() {
         </div>
       </section>
 
-      <section className="relative pb-64">
+      <section className="relative pb-64 bg-[#081F8B]">
         <div className="absolute w-full h-full z-10 pointer-events-none">
           <img 
             src="/decorative/speech-bubble-bg.png" 
