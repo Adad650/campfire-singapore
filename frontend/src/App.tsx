@@ -39,7 +39,7 @@ function App() {
       </div>
 
       <div className="w-full h-screen">
-        <header className="relative h-[80px] lg:h-[115px] bg-[#45b4f5] flex justify-end items-center pr-16">
+        <header className="relative h-[80px] lg:h-[115px] bg-[#45b4f5] flex justify-end items-center content-center lg:pr-16">
           <nav className="flex gap-4 text-3xl lg:gap-12 items-center text-white lg:text-5xl font-bold font-amatic">
             <NavbarLink onClick={() => scrollToSection('steps')}>How to organize</NavbarLink>
             {/* <NavbarLink onClick={() => scrollToSection('map')}>Map</NavbarLink> */}
@@ -243,26 +243,26 @@ function App() {
           />
         </div>
         
-        <div className="absolute top-[0px] z-45 right-0 w-[352px] pointer-events-none">
+        <div className="absolute top-[0px] z-45 right-0 w-[150px] lg:w-[352px] pointer-events-none">
           <img
             src="/decorative/cogs-top-right.png" alt=""
             className="w-full h-full object-contain select-none"
           />
         </div>
 
-        <div className="absolute top-[55%] z-45 left-0 w-[260px] pointer-events-none">
+        <div className="absolute invisible lg:visible top-[55%] z-45 left-0 w-[260px] pointer-events-none">
           <img src="/decorative/cogs-mid-left.png" alt="" className="w-full h-full object-contain select-none" />
         </div>
         
-        <div className="absolute top-[75%] z-45 right-0 translate-x-20 w-[280px] pointer-events-none">
+        <div className="absolute invisible lg:visible top-[75%] z-45 right-0 translate-x-20 w-[280px] pointer-events-none">
           <img src="/decorative/single-cog-1.png" alt="" className="w-full h-full object-contain select-none" />
         </div>
 
-        <div className="absolute top-[82%] z-45 left-0 translate-x-10 w-[280px] pointer-events-none">
+        <div className="absolute invisible lg:visible top-[82%] z-45 left-0 translate-x-10 w-[280px] pointer-events-none">
           <img src="/decorative/single-cog-2.png" alt="" className="w-full h-full object-contain select-none" />
         </div>
 
-        <div id="steps" className="relative z-40 flex flex-col gap-24 items-center px-12 max-w-7xl mx-auto">
+        <div id="steps" className="relative z-40 flex flex-col gap-24 items-center px-12 max-w-7xl mx-auto pt-12 lg:pt-0">
           <Step 
             stepNumber={1}
             imageSrc="/ui/step-signup.jpeg"
@@ -472,7 +472,7 @@ function App() {
                 <img src="/ui/woodboard-1-bottom.svg" alt="" className="w-full flex-shrink-0 select-none" />
               </div>
               
-              <div className="relative z-10 flex flex-col gap-10 items-center lg:px-16 pt-8 lg:w-[608px]">
+              <div className="relative z-10 flex flex-col gap-10 items-center lg:px-16 pt-8 w-[90%] lg:w-[608px]">
                 <p 
                   className="text-[#d7cfeb] text-6xl font-bold text-center mb-4 font-amatic"
                   style={{ 
@@ -508,7 +508,7 @@ function App() {
                 <img src="/ui/woodboard-2-bottom.svg" alt="" className="w-full flex-shrink-0 select-none" />
               </div>
               
-              <div className="relative z-10 flex flex-col gap-10 items-center px-16 pt-9 lg:w-[608px]">
+              <div className="relative z-10 flex flex-col gap-10 items-center px-16 pt-9 w-full lg:w-[608px]">
                 <p 
                   className="text-[#d7cfeb] text-6xl font-bold text-center mb-4 font-amatic"
                   style={{ 
@@ -549,7 +549,7 @@ function App() {
 
         <div className="relative w-full h-[190px] bg-[#0f371d] -mt-3 flex flex-col items-center justify-center gap-6 z-10">
           <p 
-            className="text-white text-5xl text-center font-bold font-amatic"
+            className="text-white text-4xl lg:text-5xl text-center font-bold font-amatic"
             style={{ 
               textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
             }}
@@ -557,7 +557,7 @@ function App() {
             made with ♥ by Hack Club teens
           </p>
 
-          <div className="flex items-center gap-4 text-white text-3xl font-amatic font-bold z-20">
+          <div className="flex items-center gap-4 text-white text-2xl lg:text-3xl font-amatic font-bold z-20">
             <a href="https://hackclub.com/" target="_blank" className="hover:underline">Hack Club</a>
             <span>•</span>
             <a href="https://hackclub.com/slack" target="_blank" className="hover:underline">Slack</a>
