@@ -466,8 +466,10 @@ function App() {
 
           <div className="flex flex-col lg:flex-row gap-10 justify-center items-start">
             <div className="relative">
-              <div className="absolute inset-0 lg:w-[608px] lg:h-[1491px] pointer-events-none">
-                <img src="/ui/faq-participant-bg.svg" alt="" className="w-full h-full object-cover select-none" />
+              <div className="absolute inset-0 lg:w-[608px] pointer-events-none flex flex-col">
+                <img src="/ui/woodboard-1-top.svg" alt="" className="w-full flex-shrink-0 select-none" />
+                <div className="bg-[#AD684F] flex-1 w-full py-4"></div>
+                <img src="/ui/woodboard-1-bottom.svg" alt="" className="w-full flex-shrink-0 select-none" />
               </div>
               
               <div className="relative z-10 flex flex-col gap-10 items-center lg:px-16 pt-8 lg:w-[608px]">
@@ -500,8 +502,10 @@ function App() {
             </div>
 
             <div className="relative w-full lg:w-auto">
-              <div className="absolute inset-0 lg:w-[608px] h-[1505px] pointer-events-none">
-                <img src="/ui/faq-organizer-bg.svg" alt="" className="w-full h-full object-cover select-none" />
+              <div className="absolute inset-0 lg:w-[608px] pointer-events-none flex flex-col">
+                <img src="/ui/woodboard-2-top.svg" alt="" className="w-full flex-shrink-0 select-none" />
+                <div className="bg-[#AD684F] flex-1 w-full py-4"></div>
+                <img src="/ui/woodboard-2-bottom.svg" alt="" className="w-full flex-shrink-0 select-none" />
               </div>
               
               <div className="relative z-10 flex flex-col gap-10 items-center px-16 pt-9 lg:w-[608px]">
