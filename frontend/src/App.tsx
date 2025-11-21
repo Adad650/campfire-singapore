@@ -104,6 +104,7 @@ function App() {
             <div className="flex flex-col gap-4 w-full md:w-[648px]">
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-4">
+                  <a href='https://hackclub.com' className='transition-transform hover:scale-105 active:scale-95'>
                   <img 
                     src="/decorative/hack-club-flag.png" 
                     alt="Hack Club" 
