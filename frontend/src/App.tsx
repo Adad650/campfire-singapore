@@ -239,7 +239,7 @@ function App() {
         </div>
       </div>
 
-      <section className="relative pt-[13vw] pb-96 bg-[url(/backgrounds/underwater-gradient.png)] bg-cover">
+      <section className="relative pt-[13vw] pb-96 bg-[url(/backgrounds/underwater-gradient.webp)] bg-cover">
         <div className="absolute top-0 left-0 w-screen h-[200px] bg-gradient-to-b from-[#004b2a] to-transparent pointer-events-none"></div>
         <div className="absolute top-[30px] left-0 w-full scale-125 pointer-events-none z-50">
           <img src="/decorative/vines.webp" alt="" className="w-full h-full object-cover select-none" />
@@ -505,7 +505,7 @@ function App() {
 
         <div className="scale-250 translate-y-64 pb-48 md:pb-0 md:translate-y-0 md:scale-105 left-0 w-full pointer-events-none">
           <img
-            src="/decorative/puzzle-cloud-bottom.png"
+            src="/decorative/puzzle-cloud-bottom.webp"
             alt=""
             className="w-full h-full object-cover select-none"
           />
