@@ -4,6 +4,7 @@ import Step from './components/Step.js';
 import StoryCard from './components/StoryCard.js';
 import GameCard from './components/GameCard.js';
 import NavbarLink from './components/NavbarLink.tsx';
+import VideoEmbed from './components/VideoEmbed.tsx';
 import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 
@@ -13,12 +14,19 @@ const FORM_URL_RSVP = "https://forms.hackclub.com/t/a3QSt8MuvHus";
 function App() {
   const [email, setEmail] = useState("");
   const [scrollY, setScrollY] = useState(document.body.scrollTop);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1280);
   const emailRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
       setScrollY(window.scrollY);
     });
+    
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 1280);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -40,7 +48,7 @@ function App() {
 
   return (
     <div className="w-full min-h-screen flex flex-col overflow-x-hidden">
-      <div className="absolute -top-16 -left-8 w-1/3 md:z-40 pointer-events-none">
+      <div className="absolute -top-16 -left-8 w-1/3 z-20 pointer-events-none hidden min-[860px]:block">
         <img 
           src="/compressed/backgrounds/corner-cloud.webp" 
           alt=""
@@ -50,7 +58,7 @@ function App() {
 
       <div className="w-full h-screen">
         <header className="relative h-[60px] md:h-[115px] bg-[#45b4f5] justify-end items-center content-center md:pr-16 hidden sm:flex">
-          <nav className="flex gap-4 w-full justify-between px-8 md:px-0 text-2xl md:gap-12 items-center md:justify-end text-white md:text-5xl font-bold font-ember-and-fire">
+          <nav className="flex gap-4 w-full justify-between px-8 md:px-0 text-2xl md:gap-12 items-center md:justify-end text-white md:text-3xl xl:text-5xl font-bold font-ember-and-fire">
             <NavbarLink onClick={() => scrollToSection('steps')}>How to organize</NavbarLink>
             {/* <NavbarLink onClick={() => scrollToSection('map')}>Map</NavbarLink> */}
             {/* <NavbarLink onClick={() => scrollToSection('letter')}>Letter</NavbarLink> */}
@@ -68,27 +76,27 @@ function App() {
           <div
             className="absolute bottom-[32px] right-[40px] md:right-[140px] w-full h-full pointer-events-none"
             style={{
-              transform: `translateY(${-scrollY / 12}px)`
+              transform: isLargeScreen ? `translateY(${-scrollY / 12}px)` : undefined
             }}
           >
             {/* fishy on the right. His name is frederick. */}
-            <div className="absolute top-[128px] md:top-[96px] right-[-50px] md:right-[100px] w-1/3 md:w-1/6">
+            <div className="absolute top-[128px] md:top-[96px] right-[-50px] md:right-[100px] w-1/3 md:w-[200px]">
               <img src="/compressed/characters/fish-2.webp" alt="Fish named Frederick" className="w-full h-full object-cover select-none" />
             </div>
 
             {/* fishy on the left. His name is gubson */}
-            <div className="absolute top-[96px] md:top-[60px] right-[-10px] md:right-[300px] w-1/3 md:w-1/6">
+            <div className="absolute top-[96px] md:top-[60px] right-[-10px] md:right-[300px] w-1/3 md:w-[200px]">
               <img src="/compressed/characters/fish-1.webp" alt="Fish named Gubson" className="w-full h-full object-cover select-none" />
             </div>
           </div>
 
-          <div className="absolute bottom-0 md:bottom-[160px] flex items-end md:block left-0 w-full h-full md:animate-cloud-float-right pointer-events-none">
+          <div className="absolute bottom-0 left-0 w-full max-h-[120vh] overflow-hidden pointer-events-none md:animate-cloud-float-right">
             <img
               src="/backgrounds/bottom-cloud.webp"
               alt=""
-              className="select-none"
+              className="w-full h-full object-cover object-top select-none"
               style={{
-                transform: `translateY(${-scrollY / 5}px)`
+                transform: isLargeScreen ? `translateY(${-scrollY / 5}px)` : undefined
               }}
             />
           </div>
@@ -101,10 +109,10 @@ function App() {
             />
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center w-full gap-8 pb-16 z-10 h-full pt-16 md:pt-0 md:h-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start xl:items-center w-full gap-8 pb-16 z-30 h-full pt-16 md:pt-0 md:h-auto">
             <div className="flex flex-col gap-4 w-full md:w-[648px]">
               <div className="mb-6">
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-4 relative z-30">
                   <a href='https://hackclub.com' className='transition-transform hover:scale-105 active:scale-95'>
                     <img 
                       src="/decorative/flag-standalone-wtransparent.png" 
@@ -130,7 +138,7 @@ function App() {
                 
                 <div className="transform md:rotate-[-2.97deg]">
                   <h1 
-                    className="text-[#fcf5ed] text-[80px] md:text-[120px] md:text-[150px] font-normal leading-none mb-4 font-dream-planner"
+                    className="text-[#fcf5ed] text-[80px] md:text-[100px] xl:text-[150px] font-normal leading-none mb-4 font-dream-planner"
                     style={{ 
                       textShadow: "5px 8px 0px rgba(0,0,0,0.25)"
                     }}
@@ -141,7 +149,7 @@ function App() {
 
                 <div className="pl-2 md:pl-4">
                   <p 
-                    className="text-white text-4xl font-bold mb-2 font-ember-and-fire"
+                    className="text-white text-4xl md:text-3xl xl:text-4xl font-bold mb-2 font-ember-and-fire"
                     style={{ 
                       textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
                     }}
@@ -149,12 +157,12 @@ function App() {
                     Game jam for high schoolers in 200+ cities
                   </p>
                   <p 
-                    className="text-white text-4xl font-bold font-ember-and-fire"
+                    className="text-white text-4xl md:text-3xl xl:text-4xl font-bold font-ember-and-fire"
                     style={{ 
                       textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
                     }}
                   >
-                    Feb 28 - Mar 1, 2026
+                    Feb 7-8, 2026
                   </p>
                 </div>
               </div>
@@ -206,38 +214,7 @@ function App() {
               </div>
             </div>
 
-            <div className="relative w-full md:w-auto">
-              <div className="flex items-center justify-center gap-3 mb-4 2xl:mb-8 pt-6 md:pt-0">
-                <p 
-                  className="text-white text-4xl 2xl:text-6xl md:text-4xl font-bold font-ember-and-fire"
-                  style={{ 
-                    textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                  }}
-                >
-                  watch the video
-                </p>
-
-                <img 
-                  src="/compressed/ui/arrow.webp" 
-                  alt="" 
-                  className="w-[45px] md:w-[55px] h-[33px] md:h-[41px] translate-y-6 rotate-[6.2deg] z-50 select-none"
-                />
-              </div>
-
-              <div className="relative transform rotate-[1.7deg] transition-transform hover:scale-105">
-                <iframe
-                  width="442"
-                  height="249"
-                  src="https://www.youtube.com/embed/yVgqQQ5xYJo?si=1PngS7-FtsjCfAGy" 
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  className="h-[180px] md:h-[250px] w-auto md:w-full md:max-w-[442px] aspect-video rounded-2xl shadow-[12px_12px_0px_0px_rgba(0,0,0,0.25)] mx-auto"
-                />
-              </div>
-            </div>
+            <VideoEmbed className="hidden xl:block self-end mb-8" />
           </div>
         </section>
 
@@ -247,15 +224,19 @@ function App() {
             alt=""
             className="w-full h-full object-cover select-none"
             style={{
-              transform: `translateY(${scrollY / 10}px)`
+              transform: isLargeScreen ? `translateY(${scrollY / 10}px)` : undefined
             }}
           />
         </div>
       </div>
 
-      <section className="relative pt-[13vw] pb-96 bg-[url(/backgrounds/underwater-gradient.webp)] bg-cover">
+      <section className="relative pb-96 bg-[url(/backgrounds/underwater-gradient.webp)] bg-cover bg-top">
+        <div className="xl:hidden pt-16 pb-8 relative z-10">
+          <VideoEmbed className="px-6" />
+        </div>
+        <div className="pt-[8vw] xl:pt-[13vw]"></div>
         <div className="absolute top-0 left-0 w-screen h-[200px] bg-gradient-to-b from-[#004b2a] to-transparent pointer-events-none"></div>
-        <div className="absolute top-[30px] left-0 w-full scale-125 pointer-events-none z-50">
+        <div className="absolute top-0 xl:top-[30px] left-0 w-full scale-125 pointer-events-none z-50">
           <img src="/decorative/vines.webp" alt="" className="w-full h-full object-cover select-none" />
         </div>
 
@@ -297,7 +278,7 @@ function App() {
         <div id="steps" className="relative z-40 flex flex-col gap-24 items-center px-12 max-w-7xl mx-auto pt-12 md:pt-0">
           <Step 
             stepNumber={1}
-            imageSrc="/compressed/ui/step-signup.webp"
+            imageSrc="/compressed/ui/step-signup.jpeg"
             imageAlt="Step 1"
           >
             Find a team of <br></br><span className="font-bold text-[#F77034]">CO-ORGANIZERS</span>
@@ -351,11 +332,11 @@ function App() {
           <img src="/decorative/clouds-3-symmetric.webp" alt="" className="w-full h-full select-none" />
         </div>
 
-        <div id="letter" className="relative w-full h-full z-50 translate-y-20 md:translate-y-64 flex justify-center">
-          <img src='/compressed/backgrounds/world-map-left.webp' alt='' className='h-full hidden md:block' />
-          <div className='flex items-center md:block md:relative'>
-            <img src='/backgrounds/world-map-right.webp' alt='' className='h-full hidden md:block' />
-            <div className='md:absolute md:top-0 md:left-0 py-12 md:py-16 md:pb-0 rounded-xl shadow-[0_8px_20px_rgba(0,0,0,0.25)] md:rounded-none md:shadow-none md:pt-30 pl-6 md:pl-12 pr-6 md:pr-64 text-xl bg-[#EAD6BE] border-[#DCA87E] border-4 md:border-0 md:bg-transparent flex flex-col gap-6 font-solway'>
+        <div id="letter" className="relative w-full h-full z-50 translate-y-20 min-[1200px]:translate-y-64 flex justify-center">
+          <img src='/compressed/backgrounds/world-map-left.webp' alt='' className='h-full hidden min-[1200px]:block' />
+          <div className='flex items-center min-[1200px]:block min-[1200px]:relative'>
+            <img src='/backgrounds/world-map-right.webp' alt='' className='h-full hidden min-[1200px]:block' />
+            <div className='min-[1200px]:absolute min-[1200px]:top-0 min-[1200px]:left-0 py-12 min-[1200px]:py-16 min-[1200px]:pb-0 rounded-xl shadow-[0_8px_20px_rgba(0,0,0,0.25)] min-[1200px]:rounded-none min-[1200px]:shadow-none min-[1200px]:pt-30 pl-6 min-[1200px]:pl-12 pr-6 min-[1200px]:pr-64 text-xl bg-[#EAD6BE] border-[#DCA87E] border-4 min-[1200px]:border-0 min-[1200px]:bg-transparent flex flex-col gap-6 font-solway'>
               <h1>Dear hacker,</h1>
               <p>
                 You can make a change: inspire someone to build a game for the first time, help someone
@@ -426,7 +407,7 @@ function App() {
             Stories from past events
           </h2>
           
-          <div className="flex flex-col md:flex-row gap-12 justify-between w-full items-center">
+          <div className="flex flex-col min-[1050px]:flex-row gap-12 justify-between w-full items-center">
             <StoryCard 
               imageSrc="/stories/counterspell.webp"
               imageAlt=""
