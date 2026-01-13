@@ -7,9 +7,11 @@ import tailwindcss from '@tailwindcss/vite';
 
 import node from '@astrojs/node';
 
+import svelte from '@astrojs/svelte';
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  integrations: [react(), svelte()],
 
   vite: {
     plugins: [tailwindcss()]
@@ -17,5 +19,7 @@ export default defineConfig({
 
   adapter: node({
     mode: 'standalone'
-  })
+  }),
+
+  output: "server"
 });
