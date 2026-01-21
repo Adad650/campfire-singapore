@@ -14,7 +14,16 @@ export default defineConfig({
   integrations: [react(), svelte()],
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+      rollupOptions: {
+        external: [/^@prisma\/client\/runtime\/.*/]
+      }
+    },
+    ssr: {
+      noExternal: ['@prisma/client'],
+      external: ['@prisma/client/runtime/query_compiler_fast_bg.postgresql.mjs']
+    }
   },
 
   adapter: node({
