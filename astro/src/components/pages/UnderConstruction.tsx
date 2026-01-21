@@ -96,7 +96,7 @@ function UnderConstruction({ event_name, record_id }: UnderConstructionProps) {
                                     textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
                                 }}
                             >
-                                This site is still under construction!
+                                This event is confirmed, but we’re still finalizing the exact schedule! The site will be live in 3-4 business days
                             </p>
                             <p
                                 className="text-white text-4xl md:text-3xl xl:text-4xl font-bold font-ember-and-fire text-center"
