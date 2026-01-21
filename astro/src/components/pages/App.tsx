@@ -731,8 +731,8 @@ function App({ events }: { events: EventLocation[] }) {
             >
               ✕
             </button>
-            <Map 
-              events={events} 
+            <iframe 
+              src="/map" 
               className="w-full h-full rounded-2xl"
             />
           </div>
