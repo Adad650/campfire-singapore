@@ -225,7 +225,10 @@ export type SatelliteContent = {
     event: {
         city: string;
         date: string;
-        venue: string;
+        venue: {
+            name: string;
+            link: string;
+        };
         schedule: {
             days: {
                 date: string;

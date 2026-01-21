@@ -35,7 +35,7 @@ const CONTENT = {
     hero: {
       campfire: "CAMPFIRE",
       subtitle: "Game jam for high schoolers in 200+ cities",
-      hostedAt: "Hosted @ {venue}",
+      hostedAt: "Hosted @ ",
       emailPlaceholder: "you@hackclub.com",
       ctaPrimary: "SIGN UP!",
       ctaSecondary: "flagship event",
@@ -91,7 +91,10 @@ const CONTENT = {
   event: {
     city: "Shelburne",
     date: "Feb 28 - Mar 1, 2026",
-    venue: "Hack Club HQ",
+    venue: {
+      name: "Hack Club HQ",
+      link: "https://www.google.com/maps/place/Hack+Club/@44.380961,-73.2299918,877m/data=!3m1!1e3!4m10!1m2!2m1!1shack+club+hq!3m6!1s0x4cca7df09a009e9b:0xd3a527022dfe1a3e!8m2!3d44.380558!4d-73.2270953!15sCgxoYWNrIGNsdWIgaHFaDiIMaGFjayBjbHViIGhxkgEXbm9uX3Byb2ZpdF9vcmdhbml6YXRpb26aASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUk1jM0pQUldGbkVBReABAPoBBAgeEC8!16s%2Fg%2F11rrjxqpl6?entry=ttu&g_ep=EgoyMDI2MDExOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D"
+    },
     schedule: {
       days: [
         {
@@ -341,7 +344,10 @@ function App({slug, content}: {slug: string | undefined, content: SatelliteConte
                       textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
                     }}
                   >
-                    {content.localization.hero.hostedAt.replace('{venue}', content.event.venue)}
+                    {content.localization.hero.hostedAt}
+                    <a href={content.event.venue.link} target="_blank" rel="noopener noreferrer" className="underline">
+                      {content.event.venue.name}
+                    </a>
                   </p>
                   <p
                     className="text-white text-4xl md:text-3xl xl:text-4xl font-bold font-ember-and-fire"
