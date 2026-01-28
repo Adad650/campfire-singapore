@@ -2,6 +2,7 @@ import 'dotenv/config';
 import Airtable from 'airtable';
 import { prisma } from './prisma';
 import { error } from 'node:console';
+import { SatelliteContentSchema } from './satellite';
 
 Airtable.configure({
     apiKey: process.env.AIRTABLE_API_KEY,
@@ -25,6 +26,47 @@ export async function listOfEventWebsiteData() {
 const POLL_INTERVAL = parseInt(process.env.AIRTABLE_POLL_INTERVAL || '300000', 10);
 
 const VERSION = 2;
+
+function validateSatelliteContent(data: unknown): string[] {
+    const result = SatelliteContentSchema.safeParse(data);
+    if (result.success) {
+        return [];
+    }
+    return result.error.issues.map(issue => `${issue.path.join('.')}: ${issue.message}`);
+}
+
+function parseRecord(record: Airtable.Record<Airtable.FieldSet>) {
+    const slug = record.get('slug') as string;
+    const websiteJson = record.get('website_json') as string;
+    const websiteActive = record.get('website_active') === true;
+
+    if (!slug) {
+        console.warn(`Skipping record ${record.id}: missing slug`);
+        return null;
+    }
+
+    let data: any;
+    try {
+        data = websiteJson ? JSON.parse(websiteJson) : {};
+        
+        if (websiteActive) {
+            if (data.version !== VERSION) {
+                data = { error: "Your JSON is outdated. Please update it!" };
+            } else {
+                const validationErrors = validateSatelliteContent(data);
+                if (validationErrors.length > 0) {
+                    console.error(`Validation errors for slug ${slug}: ${validationErrors.join(', ')}`);
+                    data = { error: `Invalid JSON structure: ${validationErrors.join(', ')}` };
+                }
+            }
+        }
+    } catch (error) {
+        console.error(`Error parsing JSON for slug ${slug}: ${error}`);
+        data = { error: "Error parsing JSON. Make sure the JSON is valid!" };
+    }
+
+    return { recordId: record.id, slug, data, active: websiteActive };
+}
 
 class AirtableSyncWorker {
     private intervalId: NodeJS.Timeout | null = null;
@@ -52,29 +94,7 @@ class AirtableSyncWorker {
 
             // Parse all records first
             const parsedRecords = records
-                .map(record => {
-                    const slug = record.get('slug') as string;
-                    const websiteJson = record.get('website_json') as string;
-                    const websiteActive = record.get('website_active') === true;
-
-                    if (!slug) {
-                        console.warn(`Skipping record ${record.id}: missing slug`);
-                        return null;
-                    }
-
-                    let data: any;
-                    try {
-                        data = websiteJson ? JSON.parse(websiteJson) : {};
-                        if (websiteActive && data.version !== VERSION) {
-                            data = { error: "Your JSON is outdated. Please update it!" };
-                        }
-                    } catch {
-                        console.error(`Error parsing JSON for slug ${slug}`);
-                        data = { error: "Error parsing JSON. Make sure the JSON is valid!" };
-                    }
-
-                    return { recordId: record.id, slug, data, active: websiteActive };
-                })
+                .map(parseRecord)
                 .filter((r): r is NonNullable<typeof r> => r !== null);
 
             // Check for duplicate slugs in Airtable data and skip them
