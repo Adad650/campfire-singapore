@@ -2,7 +2,7 @@ import 'dotenv/config';
 import Airtable from 'airtable';
 import { prisma } from './prisma';
 import { error } from 'node:console';
-import { SatelliteContentSchema } from './satellite';
+import { SatelliteContentSchema, type SatelliteContent } from './satellite';
 
 Airtable.configure({
     apiKey: process.env.AIRTABLE_API_KEY,
@@ -19,7 +19,8 @@ export async function listOfEventWebsiteData() {
             'slug', //string
             'website_json', //string
             'website_redirect', //string
-            'website_active' //boolean
+            'website_active', //boolean
+            'Status', // 'Canceled' | 'Active'
         ]
     }).all())
 }
@@ -41,6 +42,7 @@ function parseRecord(record: Airtable.Record<Airtable.FieldSet>) {
     const websiteJson = record.get('website_json') as string;
     const websiteActive = record.get('website_active') === true;
     const websiteRedirect = record.get('website_redirect') as string;
+    const status = record.get('Status') as string;
 
     if (!slug) {
         console.warn(`Skipping record ${record.id}: missing slug`);
@@ -65,6 +67,10 @@ function parseRecord(record: Airtable.Record<Airtable.FieldSet>) {
     } catch (error) {
         console.error(`Error parsing JSON for slug ${slug}: ${error}`);
         data = { error: "Error parsing JSON. Make sure the JSON is valid!" };
+    }
+
+    if (status === 'Canceled') {
+        data.cancelled = true;
     }
 
     return { recordId: record.id, slug, data, active: websiteActive, redirect: websiteRedirect };

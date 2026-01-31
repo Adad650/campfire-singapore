@@ -171,6 +171,7 @@ export async function getSatelliteData(slug: string) {
 
 export type SatelliteContent = {
     error?: string;
+    cancelled?: boolean;
     localization: {
         hero: {
             campfire: string;

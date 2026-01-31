@@ -3,6 +3,7 @@ import { z } from 'zod';
 export const SatelliteContentSchema = z.object({
     version: z.number().optional(),
     error: z.string().optional(),
+    cancelled: z.boolean().optional(),
     localization: z.object({
         hero: z.object({
             campfire: z.string(),

@@ -11,9 +11,10 @@ interface UnderConstructionProps {
     record_id?: string;
     error?: string;
     is404?: boolean;
+    cancelled?: boolean;
 }
 
-function UnderConstruction({ event_name, record_id, error = "", is404 = false }: UnderConstructionProps) {
+function UnderConstruction({ event_name, record_id, error = "", is404 = false, cancelled = false }: UnderConstructionProps) {
     const [email, setEmail] = useState("");
     const emailRef = useRef<HTMLInputElement>(null);
 
@@ -102,7 +103,7 @@ function UnderConstruction({ event_name, record_id, error = "", is404 = false }:
                                         <>
                                         This site is temporarily down! <br /> (Organizers: {error})
                                         </>
-                                    ) : is404 ? "This page doesn't exist!" : "This event is confirmed, but we’re still finalizing the exact schedule! The site will be live in 3-4 business days"
+                                    ) : is404 ? "This page doesn't exist!" : cancelled ? (<p>This event has been cancelled. <a href='/' className='underline'>Find another event near you.</a></p>) : "This event is confirmed, but we’re still finalizing the exact schedule! The site will be live in 3-4 business days"
                                 }
                             </p>
                             <p
@@ -113,6 +114,7 @@ function UnderConstruction({ event_name, record_id, error = "", is404 = false }:
                             >
                                 {is404 ? "Sign up for campfire below:" : "You can still sign up below:"}
                             </p>
+
                         </div>
                     </div>
 
