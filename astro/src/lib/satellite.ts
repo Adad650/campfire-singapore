@@ -272,6 +272,9 @@ export type SatelliteContent = {
                 buttonLink?: string;
             };
         };
+        contactUs?: {
+            email?: string;
+        }
     };
 }
 

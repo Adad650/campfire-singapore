@@ -498,6 +498,23 @@ function App({slug, content, record_id, signupUrl, webSignupOverride}: {slug: st
                 </div>)
               : (<></>)
           }
+
+          {content.event.contactUs?.email && (
+            <div className="mt-16 text-center">
+              <h2
+                className="text-[#f1ebff] text-4xl md:text-5xl font-bold mb-4 font-ember-and-fire"
+                style={{ textShadow: "0px 4px 4px rgba(0,0,0,0.25)" }}
+              >
+                Contact Us
+              </h2>
+              <a
+                href={`mailto:${content.event.contactUs.email}`}
+                className="text-xl md:text-2xl text-[#f1ebff] underline hover:text-white transition-colors font-solway"
+              >
+                {content.event.contactUs.email}
+              </a>
+            </div>
+          )}
         </div>
         
         <div className="scale-250 translate-y-80 pb-48 md:pb-0 md:translate-y-0 md:scale-105 left-0 w-full pointer-events-none">

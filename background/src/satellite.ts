@@ -103,6 +103,9 @@ export const SatelliteContentSchema = z.object({
                 buttonLink: z.string().optional()
             }).optional(),
         }),
+        contactUs: z.object({
+            email: z.string(),
+        }).optional(),
     }),
 });
 
