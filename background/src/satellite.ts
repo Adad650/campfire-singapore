@@ -104,7 +104,9 @@ export const SatelliteContentSchema = z.object({
             }).optional(),
         }),
         contactUs: z.object({
-            email: z.string(),
+            email: z.string().optional(),
+            instagram: z.string().optional(),
+            linkedin: z.string().optional(),
         }).optional(),
     }),
 });

@@ -499,7 +499,7 @@ function App({slug, content, record_id, signupUrl, webSignupOverride}: {slug: st
               : (<></>)
           }
 
-          {content.event.contactUs?.email && (
+          {(content.event.contactUs?.email || content.event.contactUs?.instagram || content.event.contactUs?.linkedin) && (
             <div className="mt-16 text-center">
               <h2
                 className="text-[#f1ebff] text-4xl md:text-5xl font-bold mb-4 font-ember-and-fire"
@@ -507,12 +507,36 @@ function App({slug, content, record_id, signupUrl, webSignupOverride}: {slug: st
               >
                 Contact Us
               </h2>
-              <a
-                href={`mailto:${content.event.contactUs.email}`}
-                className="text-xl md:text-2xl text-[#f1ebff] underline hover:text-white transition-colors font-solway"
-              >
-                {content.event.contactUs.email}
-              </a>
+              <div className="flex flex-wrap justify-center gap-6 items-center">
+                {content.event.contactUs.email && (
+                  <a
+                    href={`mailto:${content.event.contactUs.email}`}
+                    className="text-xl md:text-2xl text-[#f1ebff] underline hover:text-white transition-colors font-solway"
+                  >
+                    {content.event.contactUs.email}
+                  </a>
+                )}
+                {content.event.contactUs.instagram && (
+                  <a
+                    href={`https://instagram.com/${content.event.contactUs.instagram.replace(/^@/, '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl md:text-2xl text-[#f1ebff] underline hover:text-white transition-colors font-solway"
+                  >
+                    @{content.event.contactUs.instagram.replace(/^@/, '')}
+                  </a>
+                )}
+                {content.event.contactUs.linkedin && (
+                  <a
+                    href={content.event.contactUs.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl md:text-2xl text-[#f1ebff] underline hover:text-white transition-colors font-solway"
+                  >
+                    LinkedIn
+                  </a>
+                )}
+              </div>
             </div>
           )}
         </div>

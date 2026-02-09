@@ -274,6 +274,8 @@ export type SatelliteContent = {
         };
         contactUs?: {
             email?: string;
+            instagram?: string;
+            linkedin?: string;
         }
     };
 }
