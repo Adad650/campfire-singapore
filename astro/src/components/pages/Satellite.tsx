@@ -400,10 +400,10 @@ function App({slug, content, record_id, signupUrl, webSignupOverride}: {slug: st
           />
         </div>
 
-        <div className="relative z-20 flex flex-col gap-12 items-center px-6 md:px-24 w-full max-w-6xl mx-auto mb-100">
+        <div className="relative z-20 flex flex-col gap-12 items-center px-4 md:px-24 w-full max-w-6xl mx-auto mb-100">
           <div
             id="schedule"
-            className="relative w-full bg-[#3154B9] rounded-xl border-4 border-[#7B9FF5] p-8 md:p-16 min-h-[500px] shadow-[0_8px_20px_rgba(0,0,0,0.25)]"
+            className="relative w-full bg-[#3154B9] rounded-xl border-4 border-[#7B9FF5] px-4 py-8 md:p-16 min-h-[500px] shadow-[0_8px_20px_rgba(0,0,0,0.25)]"
           >
             <h2
               className="text-[#FFD999] text-6xl md:text-7xl font-bold text-center mb-4 font-ember-and-fire relative z-10"
@@ -417,7 +417,7 @@ function App({slug, content, record_id, signupUrl, webSignupOverride}: {slug: st
                   <h3 className="text-[#FFD999] text-2xl md:text-3xl font-bold font-ember-and-fire mb-4">
                     {day.date}
                   </h3>
-                  <div className="overflow-hidden rounded-lg">
+                  <div className="rounded-lg overflow-hidden">
                     <table className="w-full border-collapse">
                       <tbody>
                         {day.items.map((item, itemIndex) => (
@@ -425,10 +425,10 @@ function App({slug, content, record_id, signupUrl, webSignupOverride}: {slug: st
                             key={itemIndex}
                             className="bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all"
                           >
-                            <td className="p-4 text-white text-lg md:text-xl font-solway">
+                            <td className="px-2 py-4 md:p-4 text-white text-xs md:text-lg md:text-xl font-solway">
                               {item.activity}
                             </td>
-                            <td className="p-4 text-[#FFD999] text-xl md:text-2xl font-bold font-solway whitespace-nowrap w-1/3 text-right">
+                            <td className="px-2 py-4 md:p-4 text-[#FFD999] text-xs md:text-xl md:text-2xl font-bold font-solway whitespace-nowrap w-1/3 text-right">
                               {item.time}
                             </td>
                           </tr>
