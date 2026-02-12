@@ -2,9 +2,9 @@
   "version": 2,
   "localization": {
     "hero": {
-      "campfire": "CAMPFIRE",
+      "campfire": "CAMPFIRE Singapore",
       "subtitle": "Game jam for high schoolers in 200+ cities",
-      "hostedAt": "Hosted @ ",
+      "hostedAt": "Hosted @ Razor SEA HQ",
       "emailPlaceholder": "you@hackclub.com",
       "ctaPrimary": "SIGN UP!",
       "ctaSecondary": "flagship event",
@@ -61,8 +61,8 @@
     "city": "Singapore",
     "date": "Feb 28 - Mar 1, 2026",
     "venue": {
-      "name": "-",
-      "link": "-"
+      "name": "Razor SEA HQ",
+      "link": "https://www.google.com/maps/place/Razer+SEA+HQ/@1.2976441,103.788514,17z/data=!3m1!4b1!4m6!3m5!1s0x31da3d54272f0589:0x4d2d820c1fdddc94!8m2!3d1.2976387!4d103.7910889!16s%2Fg%2F1tfbqdlt?entry=ttu&g_ep=EgoyMDI2MDIwOS4wIKXMDSoASAFQAw%3D%3D"
     },
     "schedule": {
       "days": [
@@ -87,9 +87,9 @@
     "sponsors": {
       "cards": [
         {
-          "sponsor": "Hack Club",
-          "logo": "https://assets.hackclub.com/flag-standalone-wtransparent.svg",
-          "link": "https://hackclub.com"
+          "sponsor": "RΛZΞR",
+          "logo": "https://cdn.hackclub.com/019c51ed-ce6a-7e6c-a68f-d44e9a8a698a/razerLogo.png",
+          "link": "https://razer.com"
         }
       ]
     },
