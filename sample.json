@@ -91,6 +91,11 @@
           "logo": "https://assets.hackclub.com/flag-standalone-wtransparent.svg",
           "link": "https://hackclub.com"
         }
+        {
+          "sponsor": "RΛZΞR",
+          "logo": "https://cdn.hackclub.com/019c51ed-ce6a-7e6c-a68f-d44e9a8a698a/razerLogo.png",
+          "link": "https://razer.com"
+        }
       ]
     },
     "signatures": false,
