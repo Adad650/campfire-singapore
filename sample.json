@@ -5,7 +5,7 @@
       "campfire": "CAMPFIRE",
       "subtitle": "Game jam for high schoolers in 200+ cities",
       "hostedAt": "Hosted @ ",
-      "emailPlaceholder": "you@hackclub.com",
+      "emailPlaceholder": "singapore@campfire.hackclub.com",
       "ctaPrimary": "SIGN UP!",
       "ctaSecondary": "flagship event",
       "ctaSecondaryPrefix": "Looking for our ",
@@ -59,20 +59,20 @@
     }
   },
   "event": {
-    "city": "Shelburne",
+    "city": "Singapore",
     "date": "Feb 28 - Mar 1, 2026",
     "venue": {
-      "name": "Hack Club HQ",
-      "link": "https://www.google.com/maps/place/Hack+Club/@44.380961,-73.2299918,877m/data=!3m1!1e3!4m10!1m2!2m1!1shack+club+hq!3m6!1s0x4cca7df09a009e9b:0xd3a527022dfe1a3e!8m2!3d44.380558!4d-73.2270953!15sCgxoYWNrIGNsdWIgaHFaDiIMaGFjayBjbHViIGhxkgEXbm9uX3Byb2ZpdF9vcmdhbml6YXRpb26aASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUk1jM0pQUldGbkVBReABAPoBBAgeEC8!16s%2Fg%2F11rrjxqpl6?entry=ttu&g_ep=EgoyMDI2MDExOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D"
+      "name": "Razer SEA HQ",
+      "link": "https://maps.app.goo.gl/DGgYebcW8XrBJ2GcA"
     },
     "schedule": {
       "days": [
         {
-          "date": "Feb 28th (WILL BE UPDATED SHORTLY AND SUNDAYS SCHEDULE WILL BE ADDED ALONG WITH IT)",
+          "date": "Feb 28th",
           "items": [
             { "time": "7:45 AM", "activity": "Doors open" },
             { "time": "8:00-8:45 AM", "activity": "Opening Workshop" },
-            { "time": "9:00-9:45 AM", "activity": "Pool Competition" },
+            { "time": "9:00-9:45 AM", "activity": "Pool Competition pt 1" },
             { "time": "10:15 AM-12:15 PM", "activity": "Workshop" },
             { "time": "12:45-1:45 PM", "activity": "Lunch" },
             { "time": "2:00-3:00 PM", "activity": "Workshop" },
@@ -81,6 +81,23 @@
             { "time": "6:00-7:00 PM", "activity": "Project Pitch and Dinner" },
             { "time": "6:45-7:30 PM", "activity": "Karaoke" },
             { "time": "7:35-9:30 PM", "activity": "Secret Activity(if parents are concerened please feel free to reach out @ singapore@campfire.hackclub.com" }
+            
+          ]
+        }
+        {
+          "date": "Mar 1st",
+          "items": [
+            { "time": "7:45 AM", "activity": "Doors open" },
+            { "time": "8:00-8:45 AM", "activity": "Pool Competition pt 2" },
+            { "time": "9:00-12:15 PM", "activity": "Great Lock-in pt 2" },
+            { "time": "12:45-1:45 PM", "activity": "Lunch" },
+            { "time": "2:00-3:00 PM", "activity": "Karaoke" },
+            { "time": "3:00-5:30 PM", "activity": "Typing Contest" },
+            { "time": "5:30-6 PM", "activity": "Outdoor Time" },
+            { "time": "6:00-7:30 PM", "activity": "Project showcase and voting" },
+            { "time": "7:30-7:45 PM", "activity": "Clean-up" },
+            { "time": "7:45-8 PM", "activity": "Award ceremony/prize handouts" }
+            { "time": "8 PM", "activity": "EVERYBODY OUT" }
             
           ]
         }
