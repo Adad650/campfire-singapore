@@ -30,6 +30,7 @@ function FormattedText({ text }: { text: string }) {
 const FORM_URL_ORGANIZER_APPLICATION = "https://forms.hackclub.com/t/8L51MzWyrHus";
 const FORM_URL_RSVP = "https://forms.hackclub.com/t/a3QSt8MuvHus";
 const FORM_URL_SIGN_UP = "https://forms.hackclub.com/campfire-signup";
+const FORM_PARENT_GUIDE = "https://docs.google.com/document/d/1rug_L5dWRar7d7oidjpZjGvFSMUD_QsP14gtv2BcxZc/edit?usp=sharing"
 
 function App({slug, content, record_id}: {slug: string | undefined, content: SatelliteContent, record_id: string | undefined}) {
   const [email, setEmail] = useState("");
