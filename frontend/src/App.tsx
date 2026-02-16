@@ -10,6 +10,7 @@ import clsx from 'clsx';
 
 const FORM_URL_ORGANIZER_APPLICATION = "https://forms.hackclub.com/t/8L51MzWyrHus";
 const FORM_URL_RSVP = "https://forms.hackclub.com/t/a3QSt8MuvHus";
+const PARENT_GUIDE = "https://docs.google.com/document/d/1rug_L5dWRar7d7oidjpZjGvFSMUD_QsP14gtv2BcxZc/edit?usp=sharing"
 
 function FlagshipCTA({ className, compact, maxWidth }: { className?: string; compact?: boolean; maxWidth?: boolean }) {
   return (
@@ -622,7 +623,7 @@ function App() {
                 <FaqQuestion question="What do I need to bring?">
                   Just bring yourself, a laptop, charger, and any personal items you need. We'll provide food, drinks, and everything else!
                 </FaqQuestion>
-                <FaqButton content="Check out the parent guide" />
+                <FaqButton href{PARENT_GUIDE} content="Check out the parent guide" />
               </div>
             </div>
 
